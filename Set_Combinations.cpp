@@ -5,6 +5,7 @@
 
 #include "stdafx.h"
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 
@@ -14,6 +15,8 @@ using namespace std;
 vector<string> Separate_String (string inputSet);
 void Generate_Subsets(vector<string> starting, vector<string> remaining);
 
+// Global variable
+ofstream outFile;
 
 // MAIN PROGRAM
 int _tmain(int argc, _TCHAR* argv[])
@@ -31,9 +34,17 @@ int _tmain(int argc, _TCHAR* argv[])
 	// Parse input string into vector<string> startelements
 	startelements = Separate_String(set);
 	
+	// Open file to save results
+	outFile.open("SUBSETS.txt");
+
 	// Label output and start recursive call
-	cout << "The subsets are: \n";
+	cout << "The subsets are: \n\n";
+	outFile << "The subsets are: \n\n";
 	Generate_Subsets(endelements, startelements);
+
+	// Close file
+	outFile << "\nEnd of subsets";
+	outFile.close();
 
 	// Pause program before closing
 	cout << "\nPress any key to close...";
@@ -89,8 +100,13 @@ void Generate_Subsets(vector<string> starting, vector<string> remaining)
 	// All elements in the set have been used, so print the result and return
 	else 
 	{
-		for (int i = 0; i < starting.size(); i++) cout << starting[i] << " ";
+		for (int i = 0; i < starting.size(); i++) 
+		{
+			cout << starting[i] << " ";
+			outFile << starting[i] << " ";
+		}
 		cout << "\n";
+		outFile << "\n";
 		return;
 	}
 }
