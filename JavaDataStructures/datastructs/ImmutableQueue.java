@@ -67,6 +67,7 @@ public class ImmutableQueue<E> {
 			throw new NoSuchElementException("Empty queue");
 		}
 		ImmutableQueue<E> rmElem = new ImmutableQueue<E>(this.queue);
+		
 		return rmElem;
 	}
 
@@ -96,7 +97,7 @@ public class ImmutableQueue<E> {
 	}
 	
 	/*
-	 * Class Function: peek
+	 * Class Function: printQueue
 	 * --------------------------------------------------
 	 * Prints out the elements of the queue on a single 
 	 * line without modifying the ImmutableQueue object 

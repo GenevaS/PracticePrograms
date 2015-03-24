@@ -31,5 +31,25 @@ public class Main {
 		testStr = testStr.enqueue("test2");
 		testStr.printQueue();
 		System.out.print("\n");
+		
+		System.out.println("Mutable Queue - Integers");
+		MutableQueue<Integer> mInts = new MutableQueue<Integer>();
+		
+		mInts.enqueue(1);
+		System.out.print("mInts.enqueue(1): ");
+	    mInts.printQueue();
+		System.out.print("\nmInts.enqueue(2): ");
+	    mInts.enqueue(2);
+	    mInts.printQueue();
+		System.out.print("\nmInts.enqueue(3): ");
+		mInts.enqueue(3);
+	    mInts.printQueue();
+		System.out.print("\nmInts.dequeue(): ");
+		mInts.dequeue();
+		mInts.printQueue();
+		System.out.print("\nmInts: ");
+		mInts.printQueue();
+		System.out.print("\n");
+		System.out.print("\n");
 	}
 }
