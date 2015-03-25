@@ -51,5 +51,24 @@ public class Main {
 		mInts.printQueue();
 		System.out.print("\n");
 		System.out.print("\n");
+		
+		System.out.println("Mutable Stack - Integers");
+		MutableStack<Integer> stkInt = new MutableStack<Integer>();
+		
+		System.out.println("\nSize of stack is " + stkInt.size());
+		System.out.println("Push 1");
+		stkInt.push(1);
+		stkInt.printStack();
+		System.out.println("\nPop element and push 1, 2, and 3");
+		stkInt.pop();
+		stkInt.push(1);
+		stkInt.push(2);
+		stkInt.push(3);
+		stkInt.printStack();
+		System.out.println("\nSize of stack is " + stkInt.size());
+		System.out.println("\nPop element");
+		stkInt.pop();
+		stkInt.printStack();
+		System.out.println("\nSize of stack is " + stkInt.size());
 	}
 }
